@@ -2,12 +2,12 @@ import React, {useState, useEffect, useRef} from 'react'
 
 export const ProductAdd = () => {
   const [initProducts, SetinitProducts] = useState({
-    product : "",
+    productname : "",
     price : "",
     image: ""
   });
   const [storeProducts, SetstoreProducts] = useState([]);
-  
+
   const fileRef = useRef(null);
 
   useEffect(()=>{
@@ -39,7 +39,7 @@ export const ProductAdd = () => {
 
     let newUser = {
         id:newId,
-        product:initProducts.product,
+        productname:initProducts.productname,
         price :initProducts.price,
         image:initProducts.image
     }
@@ -48,7 +48,7 @@ export const ProductAdd = () => {
     localStorage.setItem("Products",JSON.stringify(updated))
     console.log(initProducts)
     SetinitProducts({
-        product : "",
+        productname : "",
     price : "",
     image: ""})
     fileRef.current.value = "";
@@ -59,12 +59,11 @@ export const ProductAdd = () => {
             <div className="card-body">
                 <h4 className='text-center card-title text-muted'>Add Products</h4>
                     <form className='p-3' onSubmit={handleSubmit}>
-                        <input type="number"/>
                     <input 
                         type="text"
                         placeholder="Enter Product"
-                        name="product"
-                        value={initProducts.product}    
+                        name="productname"
+                        value={initProducts.productname}    
                         className='form-control'         
                         onChange={handleChange}
                     /><br></br>
@@ -113,7 +112,7 @@ storeProducts.map((item)=>(
 
 <td>{item.id}</td>
 
-<td>{item.product}</td>
+<td>{item.productname}</td>
 
 <td>{item.price}</td>
 
