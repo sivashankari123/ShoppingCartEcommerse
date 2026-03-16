@@ -7,7 +7,9 @@ export const ProductAdd = () => {
     image: ""
   });
   const [storeProducts, SetstoreProducts] = useState([]);
+  
   const fileRef = useRef(null);
+
   useEffect(()=>{
     const storedData = JSON.parse(localStorage.getItem("Products")) || []
     SetstoreProducts(storedData)
