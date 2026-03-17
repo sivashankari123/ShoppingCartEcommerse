@@ -40,7 +40,7 @@ export const ProductAdd = () => {
     let newUser = {
         id:newId,
         productname:initProducts.productname,
-        price :initProducts.price,
+        price :Number(initProducts.price),
         image:initProducts.image
     }
     let updated = [...stored, newUser]
