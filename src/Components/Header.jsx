@@ -11,7 +11,7 @@ function Header() {
       <nav className='flex gap-4'>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/Cart">Cart</NavLink>
-        <NavLink to="/productadd">Add Products</NavLink>
+        {/* <NavLink to="/productadd">Add Products</NavLink> */}
       </nav>
 
       <Link to="/Cart">Cart : {cart.length}</Link>
